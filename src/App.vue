@@ -1,47 +1,21 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import TheNavbar from './components/TheNavbar.vue'
+import SimPro from './components/pro/SimPro.vue'
+import SimSpark from "./components/spark/SimSpark.vue"
+
+import { store } from './store'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+<TheNavbar />
+<div class="flex items-center justify-center min-h-[32rem] py-12">
+  <SimPro v-if="store.getSim() === 'pro'" />
+  <SimSpark v-if="store.getSim() === 'spark'" />
+</div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+body {
+  @apply bg-bc-black text-bc-white;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</style>./components/pro_sim/SimPro.vue
