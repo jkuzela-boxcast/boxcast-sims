@@ -1,7 +1,7 @@
 <script setup>
 import TheNavbar from './components/TheNavbar.vue'
-import SimPro from './components/pro/SimPro.vue'
-import SimSpark from "./components/spark/SimSpark.vue"
+import SimPro from './components/SimPro.vue'
+import SimSpark from "./components/SimSpark.vue"
 
 import { store } from './store'
 </script>
@@ -18,4 +18,4 @@ import { store } from './store'
 body {
   @apply bg-bc-black text-bc-white;
 }
-</style>./components/pro_sim/SimPro.vue
+</style>
