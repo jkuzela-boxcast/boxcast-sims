@@ -17,6 +17,8 @@ const selectedVideoInput = ref('disconnected')
 const selectedNetworkInput = ref('disconnected')
 const selectedAudioInput = ref('disconnected')
 
+const isBroadcasting = ref(true);
+
 const CablesConnected = ref({
   hdmi: false,
   sdi: false,
@@ -124,7 +126,6 @@ watch(selectedNetworkInput, (newValue) => {
           <div v-else class="-mt-2 flex flex-col items-center justify-center p-4">
             <p>{{ NetworkStatus.status }}</p>
           </div>
-
         </button>
         <button @click="audioMenuOpen = !audioMenuOpen"
           class="col-span-2 grid grid-cols-1 grid-rows-[auto,75%] bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
@@ -140,9 +141,18 @@ watch(selectedNetworkInput, (newValue) => {
           </div>
         </button>
         <button @click="broadcastMenuOpen = !broadcastMenuOpen"
-          class="col-span-6 flex items-start justify-start bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
-          <SvgIcon icon="icon-broadcast" :width="20" class="mr-1 mt-[0.0rem]" />
-          <p class="text-[0.8rem] font-medium">BROADCAST</p>
+          class=" col-span-6 grid grid-cols-1 grid-rows-[20%,60%,20%] bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
+          <div class="flex items-center justify-start pl-1">
+            <SvgIcon icon="icon-network" :width="16" class="mr-2 mt-[-0.08rem]" />
+            <p class="text-[0.8rem] font-medium">BROADCAST</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <p class="text-lg font-medium">My First Broadcast</p>
+            <p>Ending in 5 hrs 41 mins 49 secs</p>
+          </div>
+          <div class="w-min">
+            <span class="text-[0.65rem] rounded-sm bg-red-600 px-[0.35rem] py-[0.2rem] font-semibold">LIVE</span>
+          </div>
         </button>
         <button
           class="col-span-4 flex items-center justify-center font-semibold text-lg bg-[#353a47] px-4 hover:bg-[#2b2f3b]">
@@ -154,8 +164,9 @@ watch(selectedNetworkInput, (newValue) => {
       <ProNetworkPanel :network-status="CablesConnected"
         :class="{ 'top-0': networkMenuOpen, 'top-full': !networkMenuOpen }" @close-clicked="networkMenuOpen = false"
         class="absolute left-0 transition-[top]" />
-      <ProAudioPanel :class="{ 'top-0': audioMenuOpen, 'top-full': !audioMenuOpen }"
-        @close-clicked="audioMenuOpen = false" class="absolute left-0 transition-[top]" />
+      <ProAudioPanel :broadcasting=isBroadcasting :audio-status="CablesConnected"
+        :class="{ 'top-0': audioMenuOpen, 'top-full': !audioMenuOpen }" @close-clicked="audioMenuOpen = false"
+        class="absolute left-0 transition-[top]" />
       <div :class="{ 'opacity-100 top-0': broadcastMenuOpen, 'opacity-0 top-full': !broadcastMenuOpen }"
         class="transition-opacity absolute left-0 h-full w-full bg-black/50"></div>
       <ProBroadcastDetails :class="{ 'top-0': broadcastMenuOpen, 'top-full': !broadcastMenuOpen }"
