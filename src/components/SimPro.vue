@@ -7,11 +7,13 @@ import ProVideoPanel from "./ProVideoPanel.vue";
 import ProNetworkPanel from "./ProNetworkPanel.vue";
 import ProAudioPanel from "./ProAudioPanel.vue";
 import ProBroadcastDetails from "./ProBroadcastDetails.vue";
+import ProBroadcastPreview from "./ProBroadcastPreview.vue";
 
 const videoMenuOpen = ref(false);
 const networkMenuOpen = ref(false);
 const audioMenuOpen = ref(false);
 const broadcastMenuOpen = ref(false);
+const previewMenuOpen = ref(false);
 
 const selectedVideoInput = ref('disconnected')
 const selectedNetworkInput = ref('disconnected')
@@ -154,7 +156,7 @@ watch(selectedNetworkInput, (newValue) => {
             <span class="text-[0.65rem] rounded-sm bg-red-600 px-[0.35rem] py-[0.2rem] font-semibold">LIVE</span>
           </div>
         </button>
-        <button
+        <button @click="previewMenuOpen = !previewMenuOpen"
           class="col-span-4 flex items-center justify-center font-semibold text-lg bg-[#353a47] px-4 hover:bg-[#2b2f3b]">
           Preview Broadcast
         </button>
@@ -171,6 +173,9 @@ watch(selectedNetworkInput, (newValue) => {
         class="transition-opacity absolute left-0 h-full w-full bg-black/50"></div>
       <ProBroadcastDetails :class="{ 'top-0': broadcastMenuOpen, 'top-full': !broadcastMenuOpen }"
         @close-clicked="broadcastMenuOpen = false" class="absolute left-0 transition-[top]" />
+      <ProBroadcastPreview :class="{ 'top-0': previewMenuOpen, 'top-full': !previewMenuOpen }"
+        @close-clicked="previewMenuOpen = false" class="absolute left-0 transition-[top]" />
+
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@ const props = defineProps({
       <p class="text-xl font-semibold">NETWORK</p>
     </div>
   </div>
-  <div class="grid h-[87%] grid-cols-2 grid-rows-1 gap-2 p-4">
+  <div class="grid h-[87%] grid-cols-2 grid-rows-[90%,10%] gap-2 p-4">
     <div class="grid grid-cols-1 grid-rows-[25%,auto] gap-px">
       <div :class="{
         'bg-bc-blue': props.networkStatus.ethernet,
@@ -34,18 +34,18 @@ const props = defineProps({
         'justify-center': !props.networkStatus.ethernet,
       }" class="flex items-center bg-[#4f6272]">
         <p v-if="!props.networkStatus.ethernet">Not Connected</p>
-        <div v-else class="grid grid-cols-1 grid-rows-3 gap-2">
+        <div v-else class="grid grid-cols-1 grid-rows-3 gap-1">
           <div>
             <p class="text-[0.65rem] font-medium">LINK SPEED</p>
-            <p class="-mt-1 text-xl font-semibold">1000 Mbps</p>
+            <p class="-mt-1 text-[1rem] font-semibold">1000 Mbps</p>
           </div>
           <div>
             <p class="text-[0.65rem] font-medium">LAN IP</p>
-            <p class="-mt-1 text-xl font-semibold">0.0.0.1</p>
+            <p class="-mt-1 text-[1rem] font-semibold">0.0.0.1</p>
           </div>
           <div>
             <p class="text-[0.65rem] font-medium">MAC ADDRESS</p>
-            <p class="-mt-1 text-xl font-semibold">A1-B2-C3-D4-E5-F6</p>
+            <p class="-mt-1 text-[1rem] font-semibold">A1-B2-C3-D4-E5-F6</p>
           </div>
         </div>
       </div>
@@ -63,17 +63,23 @@ const props = defineProps({
         'justify-center': !props.networkStatus.wireless,
       }" class="flex items-center bg-[#4f6272]">
         <p v-if="!props.networkStatus.wireless">Not Connected</p>
-        <div v-else class="grid grid-cols-1 grid-rows-2 gap-2">
+        <div v-else class="grid grid-cols-1 grid-rows-2 gap-1">
           <div>
-            <p class="text-[0.65rem] font-medium">I HAVE</p>
-            <p class="-mt-1 text-xl font-semibold">no idea</p>
+            <p class="text-[0.65rem] font-medium">SSID</p>
+            <p class="-mt-1 text-[1rem] font-semibold">My WiFi Network</p>
           </div>
           <div>
-            <p class="text-[0.65rem] font-medium">WHAT</p>
-            <p class="-mt-1 text-xl font-semibold">goes here?</p>
+            <p class="text-[0.65rem] font-medium">LAN IP</p>
+            <p class="-mt-1 text-[1rem] font-semibold">192.168.1.1</p>
           </div>
         </div>
       </div>
+    </div>
+    <div class="text-center text-[0.75rem]">
+      <p>MAC: A1-B2-C3-D4-E5-F6</p>
+    </div>
+    <div class="text-center text-[0.75rem]">
+      <p>MAC: A1-B2-C3-D4-E5-F6</p>
     </div>
   </div>
 </div>
