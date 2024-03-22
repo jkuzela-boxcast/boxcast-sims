@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
 <div class="h-full w-full bg-[#2c333d]">
-  <div class="grid grid-cols-4 bg-[#353a47]">
+  <div class="grid grid-cols-4 bg-col-head">
     <div class="col-span-1 flex items-center justify-start pl-2">
       <SvgIcon @click="$emit('close-clicked')" icon="icon-chevron-down" :width="36"
         class="cursor-pointer text-bc-white hover:text-bc-blue" />
@@ -24,8 +24,8 @@ const props = defineProps({
     <div class="grid grid-cols-1 grid-rows-[25%,auto] gap-px">
       <div :class="{
         'bg-bc-blue': props.networkStatus.ethernet,
-        'bg-[#353a47]': !props.networkStatus.ethernet,
-      }" class="row-span-1 flex items-center justify-center bg-[#353a47]">
+        'bg-col-head': !props.networkStatus.ethernet,
+      }" class="row-span-1 flex items-center justify-center bg-col-head">
         <SvgIcon icon="icon-ethernet" :width="+18" class="text-bc-white mr-2" />
         <h3 class="text-sm font-semibold">Ethernet</h3>
       </div>
@@ -53,8 +53,8 @@ const props = defineProps({
     <div class="grid grid-cols-1 grid-rows-[25%,auto] gap-px">
       <div :class="{
         'bg-bc-blue': props.networkStatus.wireless,
-        'bg-[#353a47]': !props.networkStatus.wireless,
-      }" class="row-span-1 flex items-center justify-center bg-[#353a47]">
+        'bg-col-head': !props.networkStatus.wireless,
+      }" class="row-span-1 flex items-center justify-center bg-col-head">
         <SvgIcon icon="icon-wifi" :width="+18" class="text-white mr-2" />
         <h3 class="text-sm font-semibold">Wi-Fi</h3>
       </div>

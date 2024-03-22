@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
 <div class="h-full w-full bg-[#2c333d]">
-  <div class="grid grid-cols-4 bg-[#353a47]">
+  <div class="grid grid-cols-4 bg-col-head">
     <div class="col-span-1 flex items-center justify-start pl-2">
       <SvgIcon @click="$emit('close-clicked')" icon="icon-chevron-down" :width="36"
         class="cursor-pointer text-bc-white hover:text-bc-blue" />
@@ -24,8 +24,8 @@ const props = defineProps({
     <div class="grid grid-cols-1 grid-rows-[25%,auto] gap-px">
       <div :class="{
         'bg-bc-blue': props.videoStatus.hdmi,
-        'bg-[#353a47]': !props.videoStatus.hdmi,
-      }" class="row-span-1 flex items-center justify-center bg-[#353a47]">
+        'bg-col-head': !props.videoStatus.hdmi,
+      }" class="row-span-1 flex items-center justify-center bg-col-head">
         <h3 class="text-sm font-semibold">HDMI</h3>
       </div>
       <div :class="{
@@ -48,8 +48,8 @@ const props = defineProps({
     <div class="grid grid-cols-1 grid-rows-[25%,auto] gap-px">
       <div :class="{
         'bg-bc-blue': props.videoStatus.sdi,
-        'bg-[#353a47]': !props.videoStatus.sdi,
-      }" class="row-span-1 flex items-center justify-center bg-[#353a47]">
+        'bg-col-head': !props.videoStatus.sdi,
+      }" class="row-span-1 flex items-center justify-center bg-col-head">
         <h3 class="text-sm font-semibold">SDI</h3>
       </div>
       <div :class="{

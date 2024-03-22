@@ -102,7 +102,7 @@ watch(selectedNetworkInput, (newValue) => {
     <div class="absolute bottom-[106px] left-[142px] right-[124px] top-[133px] overflow-hidden rounded-md bg-bc-black">
       <div class="grid h-full grid-cols-10 grid-rows-2 gap-1 p-1">
         <button @click="videoMenuOpen = !videoMenuOpen"
-          class="col-span-4 grid grid-cols-1 grid-rows-[auto,75%] bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
+          class="col-span-4 grid grid-cols-1 grid-rows-[auto,75%] bg-col-head p-1 hover:bg-[#2b2f3b]">
           <div class="flex items-center justify-start pl-1">
             <SvgIcon icon="icon-video" class="mr-1 mt-[-0.14rem]" />
             <p class="text-[0.8rem] font-medium">VIDEO</p>
@@ -116,7 +116,7 @@ watch(selectedNetworkInput, (newValue) => {
           </div>
         </button>
         <button @click="networkMenuOpen = !networkMenuOpen"
-          class="col-span-4 grid grid-cols-1 grid-rows-[auto,75%] bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
+          class="col-span-4 grid grid-cols-1 grid-rows-[auto,75%] bg-col-head p-1 hover:bg-[#2b2f3b]">
           <div class="flex items-center justify-start pl-1">
             <SvgIcon icon="icon-network" :width="16" class="mr-2 mt-[-0.08rem]" />
             <p class="text-[0.8rem] font-medium">NETWORK</p>
@@ -130,7 +130,7 @@ watch(selectedNetworkInput, (newValue) => {
           </div>
         </button>
         <button @click="audioMenuOpen = !audioMenuOpen"
-          class="col-span-2 grid grid-cols-1 grid-rows-[auto,75%] bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
+          class="col-span-2 grid grid-cols-1 grid-rows-[auto,75%] bg-col-head p-1 hover:bg-[#2b2f3b]">
           <div class="flex items-center justify-center">
             <SvgIcon icon="icon-audio" :width="16" class="mr-1 mt-[-0.08rem]" />
             <p class="text-[0.8rem] font-medium">AUDIO</p>
@@ -143,7 +143,7 @@ watch(selectedNetworkInput, (newValue) => {
           </div>
         </button>
         <button @click="broadcastMenuOpen = !broadcastMenuOpen"
-          class=" col-span-6 grid grid-cols-1 grid-rows-[20%,60%,20%] bg-[#353a47] p-1 hover:bg-[#2b2f3b]">
+          class=" col-span-6 grid grid-cols-1 grid-rows-[20%,60%,20%] bg-col-head p-1 hover:bg-[#2b2f3b]">
           <div class="flex items-center justify-start pl-1">
             <SvgIcon icon="icon-network" :width="16" class="mr-2 mt-[-0.08rem]" />
             <p class="text-[0.8rem] font-medium">BROADCAST</p>
@@ -157,7 +157,7 @@ watch(selectedNetworkInput, (newValue) => {
           </div>
         </button>
         <button @click="previewMenuOpen = !previewMenuOpen"
-          class="col-span-4 flex items-center justify-center font-semibold text-lg bg-[#353a47] px-4 hover:bg-[#2b2f3b]">
+          class="col-span-4 flex items-center justify-center font-semibold text-lg bg-col-head px-4 hover:bg-[#2b2f3b]">
           Preview Broadcast
         </button>
       </div>

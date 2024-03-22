@@ -13,6 +13,10 @@ export default {
         "bc-eggplant": "#391E5F",
         "bc-shallot": "#8C4EE8",
         "bc-lagoon": "#006C80",
+        "col-head": "#353a47",
+        "col-body": "#4f6272",
+        "col-bodyhov": "#435361",
+        "audio-meter": "#64dca9",
       },
     },
     fontFamily: {
